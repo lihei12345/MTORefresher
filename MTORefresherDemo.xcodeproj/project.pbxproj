@@ -12,8 +12,6 @@
 		96586ACD1D267ABC0092515B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96586ACB1D267ABC0092515B /* Main.storyboard */; };
 		96586ACF1D267ABC0092515B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96586ACE1D267ABC0092515B /* Assets.xcassets */; };
 		96586AD21D267ABC0092515B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96586AD01D267ABC0092515B /* LaunchScreen.storyboard */; };
-		96586ADA1D26D7000092515B /* SimpleTopComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96586AD91D26D7000092515B /* SimpleTopComponent.swift */; };
-		96586ADC1D26DFA50092515B /* SimpleBottomComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96586ADB1D26DFA50092515B /* SimpleBottomComponent.swift */; };
 		980FC496D7F67A358CE44EC9 /* Pods_MTORefresherDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 019C020011027DBA071AC6C3 /* Pods_MTORefresherDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,8 +24,6 @@
 		96586ACE1D267ABC0092515B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96586AD11D267ABC0092515B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96586AD31D267ABC0092515B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96586AD91D26D7000092515B /* SimpleTopComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTopComponent.swift; sourceTree = "<group>"; };
-		96586ADB1D26DFA50092515B /* SimpleBottomComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleBottomComponent.swift; sourceTree = "<group>"; };
 		E2C7ACE39CCF53AB3D0E055A /* Pods-MTORefresherDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTORefresherDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MTORefresherDemo/Pods-MTORefresherDemo.release.xcconfig"; sourceTree = "<group>"; };
 		EE4C3589E78CB34E926E349D /* Pods-MTORefresherDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTORefresherDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MTORefresherDemo/Pods-MTORefresherDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,8 +76,6 @@
 				96586ACE1D267ABC0092515B /* Assets.xcassets */,
 				96586AD01D267ABC0092515B /* LaunchScreen.storyboard */,
 				96586AD31D267ABC0092515B /* Info.plist */,
-				96586AD91D26D7000092515B /* SimpleTopComponent.swift */,
-				96586ADB1D26DFA50092515B /* SimpleBottomComponent.swift */,
 			);
 			path = MTORefresherDemo;
 			sourceTree = "<group>";
@@ -216,10 +210,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96586ADC1D26DFA50092515B /* SimpleBottomComponent.swift in Sources */,
 				96586ACA1D267ABC0092515B /* ViewController.swift in Sources */,
 				96586AC81D267ABC0092515B /* AppDelegate.swift in Sources */,
-				96586ADA1D26D7000092515B /* SimpleTopComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

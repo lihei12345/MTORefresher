@@ -9,21 +9,21 @@
 import UIKit
 import MTORefresher
 
-class SimpleTopComponent: UIView, Component {
+public class SimpleTopComponent: UIView, Component {
     private let flipAnimationDuration: NSTimeInterval = 0.18
     
-    var mto_state: ComponentState  = .Idle {
+    public var mto_state: ComponentState  = .Idle {
         didSet {
             setNeedsLayout()
             updateUI()
         }
     }
     
-    func mto_contentHeight() -> CGFloat {
+    public func mto_contentHeight() -> CGFloat {
         return 60
     }
     
-    private lazy var statusLabel: UILabel = {
+    public lazy var statusLabel: UILabel = {
         let label: UILabel = UILabel()
         label.font = UIFont.systemFontOfSize(14)
         label.backgroundColor = UIColor.clearColor()
@@ -32,9 +32,15 @@ class SimpleTopComponent: UIView, Component {
         return label
     }()
     
-    private lazy var arrowImageView: UIImageView = {
+    public lazy var arrowImageView: UIImageView = {
         let imageView: UIImageView = UIImageView()
-        imageView.image = UIImage(named: "pull_refresh_arrow")
+        let frameworkBundle = NSBundle(forClass: SimpleTopComponent.self)
+        let imagePath = frameworkBundle.pathForResource("mto_refresher_pull_refresh_arrow@2x", ofType: "png")
+        var image: UIImage?
+        if imagePath != nil {
+            image = UIImage(contentsOfFile: imagePath!)
+        }
+        imageView.image = image
         return imageView
     }()
     
@@ -44,7 +50,7 @@ class SimpleTopComponent: UIView, Component {
         return acitivtyView
     }()
     
-    init() {
+    public init() {
         super.init(frame: CGRectZero)
         addSubview(statusLabel)
         addSubview(arrowImageView)
@@ -52,11 +58,11 @@ class SimpleTopComponent: UIView, Component {
         updateUI()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         let width = self.bounds.size.width
         let height = self.bounds.size.height

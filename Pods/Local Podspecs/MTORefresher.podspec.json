@@ -16,5 +16,22 @@
     "ios": "8.0"
   },
   "requires_arc": true,
-  "source_files": "Source/*.Swift"
+  "default_subspecs": "Core",
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "Source/*.swift",
+      "frameworks": "UIKit"
+    },
+    {
+      "name": "BasicComponent",
+      "source_files": "BasicComponent/*.swift",
+      "dependencies": {
+        "MTORefresher/Core": [
+
+        ]
+      },
+      "resources": "BasicComponent/*.{png,jpg}"
+    }
+  ]
 }

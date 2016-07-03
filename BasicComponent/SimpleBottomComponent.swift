@@ -9,29 +9,29 @@
 import UIKit
 import MTORefresher
 
-class SimpleBottomComponent: UIView, Component {
-    var mto_state: ComponentState = .Idle {
+public class SimpleBottomComponent: UIView, Component {
+    public var mto_state: ComponentState = .Idle {
         didSet {
             setNeedsLayout()
             updateUI()
         }
     }
     
-    func mto_contentHeight() -> CGFloat {
+    public func mto_contentHeight() -> CGFloat {
         return 50
     }
     
-    init() {
+    public init() {
         super.init(frame: CGRectZero)
         addSubview(statusLabel)
         updateUI()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         statusLabel.frame = CGRect(x: 0, y: 15, width: self.bounds.size.width, height: 20)
     }
@@ -51,7 +51,7 @@ class SimpleBottomComponent: UIView, Component {
         }
     }
     
-    private lazy var statusLabel: UILabel = {
+    public lazy var statusLabel: UILabel = {
         let label: UILabel = UILabel()
         label.font = UIFont.systemFontOfSize(14)
         label.backgroundColor = UIColor.clearColor()
