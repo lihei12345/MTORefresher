@@ -1,0 +1,14 @@
+PODS:
+  - MTORefresher (0.1.0)
+
+DEPENDENCIES:
+  - MTORefresher (from `.`)
+
+EXTERNAL SOURCES:
+  MTORefresher:
+    :path: "."
+
+SPEC CHECKSUMS:
+  MTORefresher: daa73a142f1b019791516593ed99380b0581e04e
+
+COCOAPODS: 0.39.0
