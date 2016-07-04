@@ -45,6 +45,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.tableView.reloadData()
             self.refresher?.stopLoad()
             self.refresher?.canPullUp = true
+            self.refresher?.hasMore = true
         }
     }
     
@@ -53,15 +54,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.count += 20
             self.tableView.reloadData()
             self.refresher?.stopLoad()
+            let hasMore = (rand()%2) == 0 ? true : false
+            self.refresher?.hasMore = hasMore
         }
     }
     
     func didTapReloadBarButtonItem() {
-        self.refresher?.triggerLoad(type: .PullDown)
+        refresher?.triggerLoad(type: .PullDown)
     }
     
     func didTapLoadMoreBarButtonItem() {
-        self.refresher?.triggerLoad(type: .PullUp)
+        refresher?.triggerLoad(type: .PullUp)
     }
     
     private lazy var tableView: UITableView = {

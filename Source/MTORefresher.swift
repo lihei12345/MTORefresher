@@ -214,7 +214,21 @@ public class MTORefresher: UIView {
             contentSizeChanged()
         }
     }
-    public var hasMore: Bool = true
+    
+    public var hasMore: Bool {
+        set {
+            guard bottomView != nil else { return }
+            if !newValue {
+                bottomView.mto_state = .NoMore
+            } else if bottomView.mto_state == .NoMore {
+                bottomView.mto_state = .Idle
+            }
+        }
+        get {
+            guard bottomView != nil else { return false }
+            return bottomView.mto_state != .NoMore
+        }
+    }
     
     private var bottomView: Component!
     private var bottomAction: (Void -> Void)?
