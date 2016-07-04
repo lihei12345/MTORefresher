@@ -80,7 +80,7 @@ public class MTORefresher: UIView {
         } else if type == .PullUp {
             if !canTriggerLoading() || !canTriggerUpLoading() { return }
             bottomBeginLoading()
-            var height = realHeight()
+            let height = realHeight()
             let contentHeight = scrollView.contentSize.height
             if autoScroll && height <= contentHeight {
                 let offsetY = contentHeight - height - originalTopInset + scrollView.contentInset.bottom
@@ -143,7 +143,7 @@ public class MTORefresher: UIView {
     }
     
     private func canTriggerDownLoading() -> Bool {
-        guard let topView = topView else {
+        guard let _ = topView else {
             return false
         }
         return canPullDown

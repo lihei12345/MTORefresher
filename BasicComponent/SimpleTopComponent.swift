@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MTORefresher
 
 public class SimpleTopComponent: UIView, Component {
     private let flipAnimationDuration: NSTimeInterval = 0.18

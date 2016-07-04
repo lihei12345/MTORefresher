@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MTORefresher
 
 public class SimpleBottomComponent: UIView, Component {
     public var mto_state: ComponentState = .Idle {
