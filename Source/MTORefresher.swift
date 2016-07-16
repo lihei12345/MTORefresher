@@ -138,6 +138,7 @@ public class MTORefresher: UIView {
         self.topAction = action
         originalTopInset = scrollView.contentInset.top
         topView.frame = CGRect(x: 0, y: -300, width: scrollView.frame.size.width, height: 300)
+        topView.autoresizingMask = [.FlexibleWidth]
         scrollView.addSubview(topView)
         return self
     }
