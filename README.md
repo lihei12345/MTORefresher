@@ -1,7 +1,21 @@
 # MTORefresher
 MTORefresher is a Swift implementation of pull-to-refresh, include pull-down and pull-up. Use 1 line of code can make this. Also you can use Component protocol to custom your own pull-to-refresh Component.
 
+## Install
 
+Now Support Swift 3:
+``` 
+pod 'MTORefresher', '~> 1.0.0'
+# Optional
+pod 'MTORefresher/BasicComponent', '~> 1.0.0'
+```
+
+For Swift 2.x:
+``` 
+pod 'MTORefresher', '~> 0.1.1'
+# Optional
+pod 'MTORefresher/BasicComponent', '~> 0.1.1' 
+```
 
 ## Basic
 ### Setup

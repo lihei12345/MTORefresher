@@ -19,7 +19,7 @@ public extension UIScrollView {
 // MARK: - ComponentState -
 
 public enum ComponentState {
-    case Idle, Pulling, HitTheEnd, Loading, NoMore
+    case idle, pulling, hitTheEnd, loading, noMore
 }
 
 public protocol Component {
@@ -30,21 +30,21 @@ public protocol Component {
 // MARK: - MTORefresher -
 
 public enum LoadType {
-    case Idle, PullUp, PullDown
+    case idle, pullUp, pullDown
 }
 
-public class MTORefresher: UIView {
+open class MTORefresher: UIView {
     
     // MARK: - Life
     
-    private weak var scrollView: UIScrollView!
-    private weak var panGestrure: UIPanGestureRecognizer!
+    fileprivate weak var scrollView: UIScrollView!
+    fileprivate weak var panGestrure: UIPanGestureRecognizer!
     
     public init(scrollView: UIScrollView) {
         self.scrollView = scrollView
         self.panGestrure = scrollView.panGestureRecognizer
         
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         
         scrollView.addSubview(self)
         addObservers()
@@ -54,30 +54,30 @@ public class MTORefresher: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override func willMoveToSuperview(newSuperview: UIView?) {
+    open override func willMove(toSuperview newSuperview: UIView?) {
         if newSuperview == nil {
             removeObservers()
             scrollView = nil
             panGestrure = nil
         }
-        super.willMoveToSuperview(newSuperview)
+        super.willMove(toSuperview: newSuperview)
     }
     
     // MARK: - Load
     
-    private var loadType: LoadType = .Idle
+    fileprivate var loadType: LoadType = .idle
     
-    public func triggerLoad(type type: LoadType, autoScroll: Bool = true) {
-        if loadType != .Idle {
+    open func triggerLoad(type: LoadType, autoScroll: Bool = true) {
+        if loadType != .idle {
             stopLoad()
         }
-        if type == .PullDown {
+        if type == .pullDown {
             if !canTriggerLoading() || !canTriggerDownLoading() { return }
             topBeginLoading()
             if autoScroll {
                 scrollView.contentOffset = CGPoint(x: 0, y: -scrollView.contentInset.top)
             }
-        } else if type == .PullUp {
+        } else if type == .pullUp {
             if !canTriggerLoading() || !canTriggerUpLoading() { return }
             bottomBeginLoading()
             let height = realHeight()
@@ -89,101 +89,101 @@ public class MTORefresher: UIView {
         }
     }
     
-    public func getLoadType() -> LoadType {
+    open func getLoadType() -> LoadType {
         return loadType
     }
     
-    public func stopLoad() {
-        if loadType == .PullDown {
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(adjustInsetAnimationDuration*Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
-                if self.topView != nil && self.topView.mto_state == .Loading {
+    open func stopLoad() {
+        if loadType == .pullDown {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(adjustInsetAnimationDuration*Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
+                if self.topView != nil && self.topView.mto_state == .loading {
                     self.stopPullDown()
                 }
             }
-        } else if bottomView != nil && bottomView.mto_state == .Loading && loadType == .PullUp {
+        } else if bottomView != nil && bottomView.mto_state == .loading && loadType == .pullUp {
             stopPullUp()
         }
     }
     
     // MARK: - Helper
     
-    private let adjustInsetAnimationDuration = 0.3
+    fileprivate let adjustInsetAnimationDuration = 0.3
     
-    private func canTriggerLoading() -> Bool {
-        return loadType == .Idle && scrollView.scrollEnabled
+    fileprivate func canTriggerLoading() -> Bool {
+        return loadType == .idle && scrollView.isScrollEnabled
     }
     
-    private func realHeight() -> CGFloat {
+    fileprivate func realHeight() -> CGFloat {
         return scrollView.frame.size.height - self.originalTopInset
     }
     
-    private func realOffsetY() -> CGFloat {
+    fileprivate func realOffsetY() -> CGFloat {
         return scrollView.contentOffset.y + scrollView.contentInset.top
     }
     
     // MARK: - Pull Down
     
-    public var canPullDown: Bool = true {
+    open var canPullDown: Bool = true {
         didSet {
-            (topView as? UIView)?.hidden = canPullDown
+            (topView as? UIView)?.isHidden = canPullDown
             stopPullDown()
         }
     }
-    private var topView: Component!
-    private var topAction: (Void -> Void)?
-    private var originalTopInset: CGFloat = 0
+    fileprivate var topView: Component!
+    fileprivate var topAction: ((Void) -> Void)?
+    fileprivate var originalTopInset: CGFloat = 0
     
-    public func add<Top: Component where Top: UIView>(topView topView: Top, action: Void -> Void) -> MTORefresher {
+    open func add<Top: Component>(topView: Top, action: @escaping (Void) -> Void) -> MTORefresher where Top: UIView {
         self.topView = topView
         self.topAction = action
         originalTopInset = scrollView.contentInset.top
         topView.frame = CGRect(x: 0, y: -300, width: scrollView.frame.size.width, height: 300)
-        topView.autoresizingMask = [.FlexibleWidth]
+        topView.autoresizingMask = [.flexibleWidth]
         scrollView.addSubview(topView)
         return self
     }
     
-    private func canTriggerDownLoading() -> Bool {
+    fileprivate func canTriggerDownLoading() -> Bool {
         guard let _ = topView else {
             return false
         }
         return canPullDown
     }
     
-    private func triggerPullDown(dragging: Bool) {
+    fileprivate func triggerPullDown(_ dragging: Bool) {
         if !canTriggerLoading() || !canTriggerDownLoading() { return }
         
         let offsetY: CGFloat = realOffsetY()
         let threshold = -topView.mto_contentHeight()
         
         if dragging {
-            if !scrollView.dragging {
+            if !scrollView.isDragging {
                 return
             }
             if offsetY < threshold {
-                topView.mto_state = .HitTheEnd
+                topView.mto_state = .hitTheEnd
             } else if offsetY > threshold && offsetY < 0 {
-                topView.mto_state = .Pulling
+                topView.mto_state = .pulling
             }
         } else {
             if offsetY < threshold {
                 topBeginLoading()
             } else {
-                topView.mto_state = .Idle
+                topView.mto_state = .idle
             }
         }
     }
     
-    private func topBeginLoading() {
-        loadType = .PullDown
-        topView.mto_state = .Loading
+    fileprivate func topBeginLoading() {
+        loadType = .pullDown
+        topView.mto_state = .loading
         updateTopInset(true)
         topAction?()
     }
     
-    private func updateTopInset(loading: Bool, animated: Bool = true) {
-        let duration: NSTimeInterval = animated ? adjustInsetAnimationDuration : 0
-        UIView.animateWithDuration(duration) {
+    fileprivate func updateTopInset(_ loading: Bool, animated: Bool = true) {
+        let duration: TimeInterval = animated ? adjustInsetAnimationDuration : 0
+        UIView.animate(withDuration: duration, animations: {
             var insets = self.scrollView.contentInset
             var top: CGFloat = insets.top
             if loading {
@@ -193,22 +193,22 @@ public class MTORefresher: UIView {
             }
             insets.top = top
             self.scrollView.contentInset = insets
-        }
+        }) 
     }
     
-    private func stopPullDown() {
-        guard topView != nil && topView.mto_state == .Loading && loadType == .PullDown else { return }
+    fileprivate func stopPullDown() {
+        guard topView != nil && topView.mto_state == .loading && loadType == .pullDown else { return }
         
-        self.loadType = .Idle
-        self.topView.mto_state = .Idle
+        self.loadType = .idle
+        self.topView.mto_state = .idle
         self.updateTopInset(false, animated: true)
     }
     
     // MARK: - Pull Up
     
-    public var canPullUp: Bool = true {
+    open var canPullUp: Bool = true {
         didSet {
-            (bottomView as? UIView)?.hidden = !canPullUp
+            (bottomView as? UIView)?.isHidden = !canPullUp
             if oldValue != canPullUp {
                 updateBottomInset(enable: canPullUp)
             }
@@ -216,26 +216,26 @@ public class MTORefresher: UIView {
         }
     }
     
-    public var hasMore: Bool {
+    open var hasMore: Bool {
         set {
             guard bottomView != nil else { return }
             if !newValue {
-                bottomView.mto_state = .NoMore
-            } else if bottomView.mto_state == .NoMore {
-                bottomView.mto_state = .Idle
+                bottomView.mto_state = .noMore
+            } else if bottomView.mto_state == .noMore {
+                bottomView.mto_state = .idle
             }
         }
         get {
             guard bottomView != nil else { return false }
-            return bottomView.mto_state != .NoMore
+            return bottomView.mto_state != .noMore
         }
     }
     
-    private var bottomView: Component!
-    private var bottomAction: (Void -> Void)?
-    private var originalBottomInset: CGFloat = 0
+    fileprivate var bottomView: Component!
+    fileprivate var bottomAction: ((Void) -> Void)?
+    fileprivate var originalBottomInset: CGFloat = 0
     
-    public func add<Bottom: Component where Bottom: UIView>(bottomView bottomView: Bottom, enableTap: Bool, action: Void -> Void) -> MTORefresher {
+    open func add<Bottom: Component>(bottomView: Bottom, enableTap: Bool, action: @escaping (Void) -> Void) -> MTORefresher where Bottom: UIView {
         self.bottomView = bottomView
         self.bottomAction = action
         originalBottomInset = scrollView.contentInset.bottom
@@ -250,18 +250,18 @@ public class MTORefresher: UIView {
         return self
     }
     
-    private func contentSizeChanged() {
+    fileprivate func contentSizeChanged() {
         (bottomView as? UIView)?.frame = CGRect(x: 0, y: scrollView.contentSize.height, width: scrollView.frame.size.width, height: 300)
     }
     
-    private func canTriggerUpLoading() -> Bool {
+    fileprivate func canTriggerUpLoading() -> Bool {
         guard let bottomView = bottomView else {
             return false
         }
-        return canPullUp && bottomView.mto_state != .NoMore
+        return canPullUp && bottomView.mto_state != .noMore
     }
     
-    private func triggerPullUp(dragging: Bool) {
+    fileprivate func triggerPullUp(_ dragging: Bool) {
         if !canTriggerLoading() || !canTriggerUpLoading() { return }
         
         let offsetY = realOffsetY()
@@ -270,23 +270,23 @@ public class MTORefresher: UIView {
         let contentHeight = scrollView.contentSize.height
         
         if dragging {
-            if scrollView.dragging && contentHeight < height {
+            if scrollView.isDragging && contentHeight < height {
                 if offsetY - bottomView.mto_contentHeight() >= 0 {
-                    bottomView.mto_state = .HitTheEnd
+                    bottomView.mto_state = .hitTheEnd
                 } else {
-                    bottomView.mto_state = .Pulling
+                    bottomView.mto_state = .pulling
                 }
             } else if contentHeight >= height {
                 let threshold: CGFloat = offsetY + height - contentHeight
-                if threshold > 0 && bottomView.mto_state != .Loading {
+                if threshold > 0 && bottomView.mto_state != .loading {
                     if threshold > bottomView.mto_contentHeight() {
-                        if !scrollView.tracking {
+                        if !scrollView.isTracking {
                             bottomBeginLoading()
                         } else {
-                            bottomView.mto_state = .HitTheEnd
+                            bottomView.mto_state = .hitTheEnd
                         }
                     } else {
-                        bottomView.mto_state = .Idle
+                        bottomView.mto_state = .idle
                     }
                 }
             }
@@ -295,19 +295,19 @@ public class MTORefresher: UIView {
             if contentHeight >= height {
                 thresold += (height - contentHeight)
             }
-            if thresold >= bottomView.mto_contentHeight() && bottomView.mto_state == .HitTheEnd {
+            if thresold >= bottomView.mto_contentHeight() && bottomView.mto_state == .hitTheEnd {
                 bottomBeginLoading()
             }
         }
     }
     
-    private func bottomBeginLoading() {
-        loadType = .PullUp
-        bottomView.mto_state = .Loading
+    fileprivate func bottomBeginLoading() {
+        loadType = .pullUp
+        bottomView.mto_state = .loading
         bottomAction?()
     }
     
-    private func updateBottomInset(enable enable: Bool) {
+    fileprivate func updateBottomInset(enable: Bool) {
         var insets = self.scrollView.contentInset
         var bottom: CGFloat = insets.bottom
         if enable {
@@ -319,26 +319,26 @@ public class MTORefresher: UIView {
         scrollView.contentInset = insets
     }
     
-    private func stopPullUp() {
-        guard bottomView != nil && bottomView.mto_state == .Loading && loadType == .PullUp else { return }
-        loadType = .Idle
-        bottomView.mto_state = .Idle
+    fileprivate func stopPullUp() {
+        guard bottomView != nil && bottomView.mto_state == .loading && loadType == .pullUp else { return }
+        loadType = .idle
+        bottomView.mto_state = .idle
     }
     
     func didTapBottomComponent() {
-        triggerLoad(type: .PullUp, autoScroll: false)
+        triggerLoad(type: .pullUp, autoScroll: false)
     }
     
     // MARK: - Observer
     
-    private var observerContext = 0
-    private let contentOffsetKeyPath = "contentOffset"
-    private let contentSizeKeyPath = "contentSize"
-    private let contentInsetKeyPath = "contentInset"
-    private let panGestureKeyPath = "state"
+    fileprivate var observerContext = 0
+    fileprivate let contentOffsetKeyPath = "contentOffset"
+    fileprivate let contentSizeKeyPath = "contentSize"
+    fileprivate let contentInsetKeyPath = "contentInset"
+    fileprivate let panGestureKeyPath = "state"
     
-    public override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        if let keyPath = keyPath where context == &observerContext {
+    open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if let keyPath = keyPath , context == &observerContext {
             switch keyPath {
             case contentOffsetKeyPath:
                 scrollViewContentOffsetChanged()
@@ -346,19 +346,20 @@ public class MTORefresher: UIView {
                 contentSizeChanged()
             case contentInsetKeyPath:
                 // Fix iOS 7 inset problem
-                if let newContentInset = change?[NSKeyValueChangeNewKey]?.UIEdgeInsetsValue() {
-                    if loadType == .PullDown {
+                var value = change?[NSKeyValueChangeKey.newKey] as? NSValue
+                if let newContentInset = value?.uiEdgeInsetsValue {
+                    if loadType == .pullDown {
                         if newContentInset.top != topView.mto_contentHeight() {
                             originalTopInset = newContentInset.top - topView.mto_contentHeight()
                         }
-                    } else if loadType == .PullUp {
+                    } else if loadType == .pullUp {
                         if newContentInset.bottom != bottomView.mto_contentHeight() {
                             originalBottomInset = newContentInset.bottom - bottomView.mto_contentHeight()
                         }
                     }
                 }
             case panGestureKeyPath:
-                if panGestrure != nil && panGestrure.state == .Ended {
+                if panGestrure != nil && panGestrure.state == .ended {
                     scrollViewContentOffsetChanged(false)
                 }
             default:
@@ -367,16 +368,16 @@ public class MTORefresher: UIView {
         }
     }
     
-    private func addObservers() {
-        if let scrollView = scrollView,  panGestrure = panGestrure{
-            scrollView.addObserver(self, forKeyPath: contentOffsetKeyPath, options:.New, context: &observerContext)
-            scrollView.addObserver(self, forKeyPath: contentSizeKeyPath, options: .New, context: &observerContext)
-            scrollView.addObserver(self, forKeyPath: contentInsetKeyPath, options: .New, context: &observerContext)
-            panGestrure.addObserver(self, forKeyPath: panGestureKeyPath, options: .New, context: &observerContext)
+    fileprivate func addObservers() {
+        if let scrollView = scrollView,  let panGestrure = panGestrure{
+            scrollView.addObserver(self, forKeyPath: contentOffsetKeyPath, options:.new, context: &observerContext)
+            scrollView.addObserver(self, forKeyPath: contentSizeKeyPath, options: .new, context: &observerContext)
+            scrollView.addObserver(self, forKeyPath: contentInsetKeyPath, options: .new, context: &observerContext)
+            panGestrure.addObserver(self, forKeyPath: panGestureKeyPath, options: .new, context: &observerContext)
         }
     }
     
-    private func removeObservers() {
+    fileprivate func removeObservers() {
         if let scrollView = scrollView, let panGestrure = panGestrure {
             removeObserver(scrollView, forKeyPath: contentOffsetKeyPath, context: &observerContext)
             removeObserver(scrollView, forKeyPath: contentSizeKeyPath, context: &observerContext)
@@ -385,7 +386,7 @@ public class MTORefresher: UIView {
         }
     }
     
-    private func scrollViewContentOffsetChanged(dragging: Bool = true) {
+    fileprivate func scrollViewContentOffsetChanged(_ dragging: Bool = true) {
         triggerPullDown(dragging)
         triggerPullUp(dragging)
     }

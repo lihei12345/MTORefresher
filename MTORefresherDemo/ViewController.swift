@@ -17,30 +17,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.white
         self.title = "MTORefresher"
         
         self.view.addSubview(tableView)
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "重新加载", style: .Done, target: self, action: #selector(didTapReloadBarButtonItem))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "加载更多", style: .Done, target: self, action: #selector(didTapLoadMoreBarButtonItem))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Reload", style: .done, target: self, action: #selector(didTapReloadBarButtonItem))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Load More", style: .done, target: self, action: #selector(didTapLoadMoreBarButtonItem))
         
         let topView: SimpleTopComponent = SimpleTopComponent()
         let bottomView: SimpleBottomComponent = SimpleBottomComponent()
-        refresher = tableView
+        self.refresher = self.tableView
             .mto_refresher()
             .add(topView: topView) { [weak self] in
                 self?.reload()
             }
             .add(bottomView: bottomView, enableTap: true) { [weak self] in
                 self?.loadMore()
-            }
-        refresher?.canPullUp = false
-        refresher?.triggerLoad(type: .PullDown)
+        }
+        self.refresher?.canPullUp = false
+        self.refresher?.triggerLoad(type: .pullDown)
     }
     
-    private func reload() {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.1*Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+    fileprivate func reload() {
+        /// Simulate network request
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.1*Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
             self.count = 2
             self.tableView.reloadData()
             self.refresher?.stopLoad()
@@ -49,53 +50,54 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    private func loadMore() {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.3*Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+    fileprivate func loadMore() {
+        /// Simulate network request
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.3*Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
             self.count += 20
             self.tableView.reloadData()
             self.refresher?.stopLoad()
-            let hasMore = (rand()%2) == 0 ? true : false
+            let hasMore = (arc4random()%2) == 0 ? true : false
             self.refresher?.hasMore = hasMore
         }
     }
     
     func didTapReloadBarButtonItem() {
-        refresher?.triggerLoad(type: .PullDown)
+        refresher?.triggerLoad(type: .pullDown)
     }
     
     func didTapLoadMoreBarButtonItem() {
-        refresher?.triggerLoad(type: .PullUp)
+        refresher?.triggerLoad(type: .pullUp)
     }
     
-    private lazy var tableView: UITableView = {
-        let tableView: UITableView = UITableView(frame: self.view.bounds, style: .Plain)
-        tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        tableView.backgroundColor = UIColor.clearColor()
+    fileprivate lazy var tableView: UITableView = {
+        let tableView: UITableView = UITableView(frame: self.view.bounds, style: .plain)
+        tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        tableView.backgroundColor = UIColor.clear
         tableView.delegate = self
         tableView.dataSource = self
         return tableView
     }()
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("cell")
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell: UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: "cell")
         if cell == nil {
-            cell = UITableViewCell(style: .Default, reuseIdentifier: "cell")
-            cell.textLabel?.textColor = UIColor.redColor()
+            cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+            cell.textLabel?.textColor = UIColor.red
         }
-        cell.backgroundColor = UIColor.lightGrayColor()
-        cell.textLabel?.text = "\(indexPath.row)"
+        cell.backgroundColor = UIColor.cyan
+        cell.textLabel?.text = "\((indexPath as NSIndexPath).row)"
         return cell
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 45
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

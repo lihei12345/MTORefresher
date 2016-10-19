@@ -8,20 +8,20 @@
 
 import UIKit
 
-public class SimpleBottomComponent: UIView, Component {
-    public var mto_state: ComponentState = .Idle {
+open class SimpleBottomComponent: UIView, Component {
+    open var mto_state: ComponentState = .idle {
         didSet {
             setNeedsLayout()
             updateUI()
         }
     }
     
-    public func mto_contentHeight() -> CGFloat {
+    open func mto_contentHeight() -> CGFloat {
         return 50
     }
     
     public init() {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         addSubview(statusLabel)
         updateUI()
     }
@@ -30,32 +30,32 @@ public class SimpleBottomComponent: UIView, Component {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         statusLabel.frame = CGRect(x: 0, y: 15, width: self.bounds.size.width, height: 20)
     }
     
-    private func updateUI() {
+    fileprivate func updateUI() {
         switch mto_state {
-        case .HitTheEnd:
+        case .hitTheEnd:
             statusLabel.text = "松开即可加载更多..."
-        case .Idle:
+        case .idle:
             fallthrough
-        case .Pulling:
+        case .pulling:
             statusLabel.text = "上拉加载更多..."
-        case .Loading:
+        case .loading:
             statusLabel.text = "努力加载中..."
-        case .NoMore:
+        case .noMore:
             statusLabel.text = "没有更多了..."
         }
     }
     
-    public lazy var statusLabel: UILabel = {
+    open lazy var statusLabel: UILabel = {
         let label: UILabel = UILabel()
-        label.font = UIFont.systemFontOfSize(14)
-        label.backgroundColor = UIColor.clearColor()
-        label.textAlignment = .Center
-        label.textColor = UIColor.blackColor()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.backgroundColor = UIColor.clear
+        label.textAlignment = .center
+        label.textColor = UIColor.black
         return label
     }()
 }
