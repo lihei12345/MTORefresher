@@ -1,590 +1,1306 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		41D6B8BC0C2E9F528BDBE5E5D39A7F0F /* SimpleBottomComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760F9AFC158C0476DCAD10871362A7C0 /* SimpleBottomComponent.swift */; };
-		49FC3AF949220ED2266C4C4D7792FFD2 /* SimpleTopComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C36F11967421352BC99DBCC3532718 /* SimpleTopComponent.swift */; };
-		4D968D2430D7C0612C553BD8457C9986 /* MTORefresher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A97C446C0F332D9316636D91FD06AD04 /* MTORefresher-dummy.m */; };
-		8E57FB5D32A1DC7348BE6143B7F131DD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */; };
-		90191C8FA2C6C96CE15C8035C94A1919 /* mto_refresher_pull_refresh_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A93F6B21DF0755EEB2729214A274182 /* mto_refresher_pull_refresh_arrow@2x.png */; };
-		9A2E7E52E3B76B88DA9BCF2BF50DE85A /* MTORefresher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 32DDF5F2DD2CDD6A5C75A1DC43D31CAC /* MTORefresher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A2DD85A971626CC824C8CB987546E7CA /* MTORefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8033DF7A5FCCE345D6E315D472CCE3 /* MTORefresher.swift */; };
-		B1931CB8E9B8A93BAD17ED6F39EE644B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
-		D6D12EF8CB58460BA3B0DAA31F6FCF3D /* Pods-MTORefresherDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 94BC3DB1AA15380F3CE239CADD876E43 /* Pods-MTORefresherDemo-dummy.m */; };
-		EB278D2BEE1E8B9C717A2476DCD140A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
-		EDF45BB506FBE9712CDEE11DFD4B4162 /* Pods-MTORefresherDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E0A6BB9DEDF60EBD3ED063E4831FFCA1 /* Pods-MTORefresherDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		71DDAE4C7662D0FC42EE63C3B900F4B5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FD8545CB6CAA4BD067E4AE96C6945DAF;
-			remoteInfo = MTORefresher;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		1AABA21E234C4223B9D262CEC53F4B27 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		32DDF5F2DD2CDD6A5C75A1DC43D31CAC /* MTORefresher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MTORefresher-umbrella.h"; sourceTree = "<group>"; };
-		3671DA7187D041B0012BB6C72D66D514 /* Pods_MTORefresherDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MTORefresherDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A93F6B21DF0755EEB2729214A274182 /* mto_refresher_pull_refresh_arrow@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "mto_refresher_pull_refresh_arrow@2x.png"; sourceTree = "<group>"; };
-		48859139FBCC34FAA2FC3A46101D6DD6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65D45A260D09767A4955A9ACFAF365E7 /* Pods-MTORefresherDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MTORefresherDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		71C36F11967421352BC99DBCC3532718 /* SimpleTopComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimpleTopComponent.swift; sourceTree = "<group>"; };
-		760F9AFC158C0476DCAD10871362A7C0 /* SimpleBottomComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SimpleBottomComponent.swift; sourceTree = "<group>"; };
-		80AFF21A03C836D3D08B7A632FED1186 /* Pods-MTORefresherDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MTORefresherDemo-acknowledgements.plist"; sourceTree = "<group>"; };
-		94BC3DB1AA15380F3CE239CADD876E43 /* Pods-MTORefresherDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MTORefresherDemo-dummy.m"; sourceTree = "<group>"; };
-		A97C446C0F332D9316636D91FD06AD04 /* MTORefresher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MTORefresher-dummy.m"; sourceTree = "<group>"; };
-		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BB66D86FA631A641182E29AC453D7DE2 /* MTORefresher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MTORefresher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD557258BEF44BDEF3BAB504C3A597F8 /* Pods-MTORefresherDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MTORefresherDemo-resources.sh"; sourceTree = "<group>"; };
-		C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		CA1499D3F8E6A96738FC43DAB9EB7971 /* MTORefresher.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MTORefresher.xcconfig; sourceTree = "<group>"; };
-		CAB772DD8436C0B666B64AA81A9A85B9 /* Pods-MTORefresherDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MTORefresherDemo.modulemap"; sourceTree = "<group>"; };
-		D9EE9AE56B62A317C00BBFFBC305D78F /* Pods-MTORefresherDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MTORefresherDemo.release.xcconfig"; sourceTree = "<group>"; };
-		DE8033DF7A5FCCE345D6E315D472CCE3 /* MTORefresher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MTORefresher.swift; sourceTree = "<group>"; };
-		DE96316C0DDC0F056B151CFC89B5E6A5 /* Pods-MTORefresherDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MTORefresherDemo-frameworks.sh"; sourceTree = "<group>"; };
-		E0A6BB9DEDF60EBD3ED063E4831FFCA1 /* Pods-MTORefresherDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MTORefresherDemo-umbrella.h"; sourceTree = "<group>"; };
-		EB01C4EA5C42BFB335FBF0A02E704A47 /* Pods-MTORefresherDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MTORefresherDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F78DFA711D3B5DDF01D1DE8C4BC969F1 /* MTORefresher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MTORefresher.modulemap; sourceTree = "<group>"; };
-		FB75E97EDE40C1515CF7BD341C143865 /* MTORefresher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MTORefresher-prefix.pch"; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		27FE9A22B6B0A792978EA2147EA16B3B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EB278D2BEE1E8B9C717A2476DCD140A1 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		39CAEB91AE178C17E871206C928E614D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B1931CB8E9B8A93BAD17ED6F39EE644B /* Foundation.framework in Frameworks */,
-				8E57FB5D32A1DC7348BE6143B7F131DD /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		053AB2517503BC79E72BB5D5CA7B68D4 /* BasicComponent */ = {
-			isa = PBXGroup;
-			children = (
-				5FAFB38DD4E32527AB3B5267B64A60D4 /* BasicComponent */,
-				BD56C0BD434DA1C61D4DD8A58953E8E2 /* Resources */,
-			);
-			name = BasicComponent;
-			sourceTree = "<group>";
-		};
-		0C06C3146A59D02F8CC85266EB15E55A /* MTORefresher */ = {
-			isa = PBXGroup;
-			children = (
-				053AB2517503BC79E72BB5D5CA7B68D4 /* BasicComponent */,
-				2C0B60AC48C15AE692C9603C3FB595E6 /* Core */,
-				929CEF870DEA0EBB5E8F39D65F442BCA /* Support Files */,
-			);
-			name = MTORefresher;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		18340F12838DEE43507667CC74401EB1 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */,
-				C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		2C0B60AC48C15AE692C9603C3FB595E6 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				C9984EDED08267128794946CF000BC3E /* Source */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		3C1843BECC17A3DB47B8E890DA5FE4A1 /* BasicComponent */ = {
-			isa = PBXGroup;
-			children = (
-				3A93F6B21DF0755EEB2729214A274182 /* mto_refresher_pull_refresh_arrow@2x.png */,
-			);
-			path = BasicComponent;
-			sourceTree = "<group>";
-		};
-		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				18340F12838DEE43507667CC74401EB1 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5FAFB38DD4E32527AB3B5267B64A60D4 /* BasicComponent */ = {
-			isa = PBXGroup;
-			children = (
-				760F9AFC158C0476DCAD10871362A7C0 /* SimpleBottomComponent.swift */,
-				71C36F11967421352BC99DBCC3532718 /* SimpleTopComponent.swift */,
-			);
-			path = BasicComponent;
-			sourceTree = "<group>";
-		};
-		79B6BFCF00569ACC7113430C779AA764 /* Pods-MTORefresherDemo */ = {
-			isa = PBXGroup;
-			children = (
-				48859139FBCC34FAA2FC3A46101D6DD6 /* Info.plist */,
-				CAB772DD8436C0B666B64AA81A9A85B9 /* Pods-MTORefresherDemo.modulemap */,
-				EB01C4EA5C42BFB335FBF0A02E704A47 /* Pods-MTORefresherDemo-acknowledgements.markdown */,
-				80AFF21A03C836D3D08B7A632FED1186 /* Pods-MTORefresherDemo-acknowledgements.plist */,
-				94BC3DB1AA15380F3CE239CADD876E43 /* Pods-MTORefresherDemo-dummy.m */,
-				DE96316C0DDC0F056B151CFC89B5E6A5 /* Pods-MTORefresherDemo-frameworks.sh */,
-				BD557258BEF44BDEF3BAB504C3A597F8 /* Pods-MTORefresherDemo-resources.sh */,
-				E0A6BB9DEDF60EBD3ED063E4831FFCA1 /* Pods-MTORefresherDemo-umbrella.h */,
-				65D45A260D09767A4955A9ACFAF365E7 /* Pods-MTORefresherDemo.debug.xcconfig */,
-				D9EE9AE56B62A317C00BBFFBC305D78F /* Pods-MTORefresherDemo.release.xcconfig */,
-			);
-			name = "Pods-MTORefresherDemo";
-			path = "Target Support Files/Pods-MTORefresherDemo";
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				961860067A8EF09F2ED1B12A2C56A506 /* Development Pods */,
-				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				D37207A75D686B0F4925EE20A23B24A1 /* Products */,
-				9DADC8B9D3CE0DB28290BD1FA2003A3C /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		929CEF870DEA0EBB5E8F39D65F442BCA /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				1AABA21E234C4223B9D262CEC53F4B27 /* Info.plist */,
-				F78DFA711D3B5DDF01D1DE8C4BC969F1 /* MTORefresher.modulemap */,
-				CA1499D3F8E6A96738FC43DAB9EB7971 /* MTORefresher.xcconfig */,
-				A97C446C0F332D9316636D91FD06AD04 /* MTORefresher-dummy.m */,
-				FB75E97EDE40C1515CF7BD341C143865 /* MTORefresher-prefix.pch */,
-				32DDF5F2DD2CDD6A5C75A1DC43D31CAC /* MTORefresher-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Pods/Target Support Files/MTORefresher";
-			sourceTree = "<group>";
-		};
-		961860067A8EF09F2ED1B12A2C56A506 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0C06C3146A59D02F8CC85266EB15E55A /* MTORefresher */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		9DADC8B9D3CE0DB28290BD1FA2003A3C /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				79B6BFCF00569ACC7113430C779AA764 /* Pods-MTORefresherDemo */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		BD56C0BD434DA1C61D4DD8A58953E8E2 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				3C1843BECC17A3DB47B8E890DA5FE4A1 /* BasicComponent */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		C9984EDED08267128794946CF000BC3E /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				DE8033DF7A5FCCE345D6E315D472CCE3 /* MTORefresher.swift */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		D37207A75D686B0F4925EE20A23B24A1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				BB66D86FA631A641182E29AC453D7DE2 /* MTORefresher.framework */,
-				3671DA7187D041B0012BB6C72D66D514 /* Pods_MTORefresherDemo.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		49D8BA089B291A8ABDB8A2C2030C1E76 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9A2E7E52E3B76B88DA9BCF2BF50DE85A /* MTORefresher-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C5DBBEA132C9478D1F58E345867F3E8A /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EDF45BB506FBE9712CDEE11DFD4B4162 /* Pods-MTORefresherDemo-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
-/* Begin PBXNativeTarget section */
-		918F3CFABB2CBC030AEE4690A25BA423 /* Pods-MTORefresherDemo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1254E757EC795308E432EF1DC3B16BFF /* Build configuration list for PBXNativeTarget "Pods-MTORefresherDemo" */;
-			buildPhases = (
-				115D9C03A5D4774B8AC82AE6C76B7AD0 /* Sources */,
-				27FE9A22B6B0A792978EA2147EA16B3B /* Frameworks */,
-				C5DBBEA132C9478D1F58E345867F3E8A /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0CFF340C8D4938695AE867C9F4837A50 /* PBXTargetDependency */,
-			);
-			name = "Pods-MTORefresherDemo";
-			productName = "Pods-MTORefresherDemo";
-			productReference = 3671DA7187D041B0012BB6C72D66D514 /* Pods_MTORefresherDemo.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		FD8545CB6CAA4BD067E4AE96C6945DAF /* MTORefresher */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7296C826D5BD4F4535E516323E9B0FD5 /* Build configuration list for PBXNativeTarget "MTORefresher" */;
-			buildPhases = (
-				17825EC4C90F5138D2F600E8DE933C61 /* Sources */,
-				39CAEB91AE178C17E871206C928E614D /* Frameworks */,
-				73728A0F0AE7615F16BF4784261A91FA /* Resources */,
-				49D8BA089B291A8ABDB8A2C2030C1E76 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MTORefresher;
-			productName = MTORefresher;
-			productReference = BB66D86FA631A641182E29AC453D7DE2 /* MTORefresher.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
-				TargetAttributes = {
-					918F3CFABB2CBC030AEE4690A25BA423 = {
-						LastSwiftMigration = 0800;
-					};
-					FD8545CB6CAA4BD067E4AE96C6945DAF = {
-						LastSwiftMigration = 0800;
-					};
-				};
-			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = D37207A75D686B0F4925EE20A23B24A1 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				FD8545CB6CAA4BD067E4AE96C6945DAF /* MTORefresher */,
-				918F3CFABB2CBC030AEE4690A25BA423 /* Pods-MTORefresherDemo */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		73728A0F0AE7615F16BF4784261A91FA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				90191C8FA2C6C96CE15C8035C94A1919 /* mto_refresher_pull_refresh_arrow@2x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		115D9C03A5D4774B8AC82AE6C76B7AD0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D6D12EF8CB58460BA3B0DAA31F6FCF3D /* Pods-MTORefresherDemo-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		17825EC4C90F5138D2F600E8DE933C61 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4D968D2430D7C0612C553BD8457C9986 /* MTORefresher-dummy.m in Sources */,
-				A2DD85A971626CC824C8CB987546E7CA /* MTORefresher.swift in Sources */,
-				41D6B8BC0C2E9F528BDBE5E5D39A7F0F /* SimpleBottomComponent.swift in Sources */,
-				49FC3AF949220ED2266C4C4D7792FFD2 /* SimpleTopComponent.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0CFF340C8D4938695AE867C9F4837A50 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MTORefresher;
-			target = FD8545CB6CAA4BD067E4AE96C6945DAF /* MTORefresher */;
-			targetProxy = 71DDAE4C7662D0FC42EE63C3B900F4B5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin XCBuildConfiguration section */
-		10278CECAEEC286558B558C2F25D396F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA1499D3F8E6A96738FC43DAB9EB7971 /* MTORefresher.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MTORefresher/MTORefresher-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MTORefresher/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MTORefresher/MTORefresher.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = MTORefresher;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		3736E045A4CC0287BD822F23D80FE2F2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65D45A260D09767A4955A9ACFAF365E7 /* Pods-MTORefresherDemo.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-MTORefresherDemo/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MTORefresherDemo/Pods-MTORefresherDemo.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_MTORefresherDemo;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		56ED823A2EF4A11C2FF1922D38BB3A7E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA1499D3F8E6A96738FC43DAB9EB7971 /* MTORefresher.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MTORefresher/MTORefresher-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MTORefresher/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MTORefresher/MTORefresher.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = MTORefresher;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A64AEB5CCFEC763C80D5A00EC9DFE4B4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9EE9AE56B62A317C00BBFFBC305D78F /* Pods-MTORefresherDemo.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-MTORefresherDemo/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MTORefresherDemo/Pods-MTORefresherDemo.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_MTORefresherDemo;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				ONLY_ACTIVE_ARCH = YES;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		1254E757EC795308E432EF1DC3B16BFF /* Build configuration list for PBXNativeTarget "Pods-MTORefresherDemo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3736E045A4CC0287BD822F23D80FE2F2 /* Debug */,
-				A64AEB5CCFEC763C80D5A00EC9DFE4B4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
-				FB45FFD90572718D82AB9092B750F0CA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7296C826D5BD4F4535E516323E9B0FD5 /* Build configuration list for PBXNativeTarget "MTORefresher" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				10278CECAEEC286558B558C2F25D396F /* Debug */,
-				56ED823A2EF4A11C2FF1922D38BB3A7E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>053AB2517503BC79E72BB5D5CA7B68D4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>5FAFB38DD4E32527AB3B5267B64A60D4</string>
+				<string>BD56C0BD434DA1C61D4DD8A58953E8E2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>BasicComponent</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0C06C3146A59D02F8CC85266EB15E55A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>053AB2517503BC79E72BB5D5CA7B68D4</string>
+				<string>2C0B60AC48C15AE692C9603C3FB595E6</string>
+				<string>929CEF870DEA0EBB5E8F39D65F442BCA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>MTORefresher</string>
+			<key>path</key>
+			<string>..</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0CFF340C8D4938695AE867C9F4837A50</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>MTORefresher</string>
+			<key>target</key>
+			<string>FD8545CB6CAA4BD067E4AE96C6945DAF</string>
+			<key>targetProxy</key>
+			<string>71DDAE4C7662D0FC42EE63C3B900F4B5</string>
+		</dict>
+		<key>115D9C03A5D4774B8AC82AE6C76B7AD0</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>D6D12EF8CB58460BA3B0DAA31F6FCF3D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>1254E757EC795308E432EF1DC3B16BFF</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>1C0DBDD06695BE8AC723B2EA6C5E4249</string>
+				<string>32538A77E2E0E0EF1DC2B5CF8408561D</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>17825EC4C90F5138D2F600E8DE933C61</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>4D968D2430D7C0612C553BD8457C9986</string>
+				<string>A2DD85A971626CC824C8CB987546E7CA</string>
+				<string>41D6B8BC0C2E9F528BDBE5E5D39A7F0F</string>
+				<string>49FC3AF949220ED2266C4C4D7792FFD2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>18340F12838DEE43507667CC74401EB1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6E7E5AF37923BFA48D6994B9BFC6535F</string>
+				<string>C3B7BDF5CE5CB8F095FE12DA55D9A9BB</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>iOS</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1AABA21E234C4223B9D262CEC53F4B27</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1C0DBDD06695BE8AC723B2EA6C5E4249</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>65D45A260D09767A4955A9ACFAF365E7</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Pods-MTORefresherDemo/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Pods-MTORefresherDemo/Pods-MTORefresherDemo.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>Pods_MTORefresherDemo</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>27FE9A22B6B0A792978EA2147EA16B3B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>EB278D2BEE1E8B9C717A2476DCD140A1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>2C0B60AC48C15AE692C9603C3FB595E6</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C9984EDED08267128794946CF000BC3E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Core</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>A70CDAD61F90AC503C7D04CC22DA2923</string>
+				<string>FB45FFD90572718D82AB9092B750F0CA</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>32538A77E2E0E0EF1DC2B5CF8408561D</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>D9EE9AE56B62A317C00BBFFBC305D78F</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Pods-MTORefresherDemo/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Pods-MTORefresherDemo/Pods-MTORefresherDemo.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>Pods_MTORefresherDemo</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>32DDF5F2DD2CDD6A5C75A1DC43D31CAC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MTORefresher-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3671DA7187D041B0012BB6C72D66D514</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods_MTORefresherDemo.framework</string>
+			<key>path</key>
+			<string>Pods_MTORefresherDemo.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>39CAEB91AE178C17E871206C928E614D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>B1931CB8E9B8A93BAD17ED6F39EE644B</string>
+				<string>8E57FB5D32A1DC7348BE6143B7F131DD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>3A93F6B21DF0755EEB2729214A274182</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>mto_refresher_pull_refresh_arrow@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3C1843BECC17A3DB47B8E890DA5FE4A1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3A93F6B21DF0755EEB2729214A274182</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>BasicComponent</string>
+			<key>path</key>
+			<string>BasicComponent</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>41D6B8BC0C2E9F528BDBE5E5D39A7F0F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>760F9AFC158C0476DCAD10871362A7C0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>42FA17DEC25DFD22B0308B1382655FED</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>CA1499D3F8E6A96738FC43DAB9EB7971</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/MTORefresher/MTORefresher-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/MTORefresher/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/MTORefresher/MTORefresher.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>MTORefresher</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>433CD3331B6C3787F473C941B61FC68F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>18340F12838DEE43507667CC74401EB1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>48859139FBCC34FAA2FC3A46101D6DD6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>49D8BA089B291A8ABDB8A2C2030C1E76</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>9A2E7E52E3B76B88DA9BCF2BF50DE85A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>49FC3AF949220ED2266C4C4D7792FFD2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>71C36F11967421352BC99DBCC3532718</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4D968D2430D7C0612C553BD8457C9986</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A97C446C0F332D9316636D91FD06AD04</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5FAFB38DD4E32527AB3B5267B64A60D4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>760F9AFC158C0476DCAD10871362A7C0</string>
+				<string>71C36F11967421352BC99DBCC3532718</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>BasicComponent</string>
+			<key>path</key>
+			<string>BasicComponent</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>65D45A260D09767A4955A9ACFAF365E7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-MTORefresherDemo.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6E7E5AF37923BFA48D6994B9BFC6535F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>71C36F11967421352BC99DBCC3532718</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>SimpleTopComponent.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>71DDAE4C7662D0FC42EE63C3B900F4B5</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>FD8545CB6CAA4BD067E4AE96C6945DAF</string>
+			<key>remoteInfo</key>
+			<string>MTORefresher</string>
+		</dict>
+		<key>7296C826D5BD4F4535E516323E9B0FD5</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>42FA17DEC25DFD22B0308B1382655FED</string>
+				<string>F17BDF08295FC66286471837C2FF50FA</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>73728A0F0AE7615F16BF4784261A91FA</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>90191C8FA2C6C96CE15C8035C94A1919</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>760F9AFC158C0476DCAD10871362A7C0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>SimpleBottomComponent.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>79B6BFCF00569ACC7113430C779AA764</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>48859139FBCC34FAA2FC3A46101D6DD6</string>
+				<string>CAB772DD8436C0B666B64AA81A9A85B9</string>
+				<string>EB01C4EA5C42BFB335FBF0A02E704A47</string>
+				<string>80AFF21A03C836D3D08B7A632FED1186</string>
+				<string>94BC3DB1AA15380F3CE239CADD876E43</string>
+				<string>DE96316C0DDC0F056B151CFC89B5E6A5</string>
+				<string>BD557258BEF44BDEF3BAB504C3A597F8</string>
+				<string>E0A6BB9DEDF60EBD3ED063E4831FFCA1</string>
+				<string>65D45A260D09767A4955A9ACFAF365E7</string>
+				<string>D9EE9AE56B62A317C00BBFFBC305D78F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-MTORefresherDemo</string>
+			<key>path</key>
+			<string>Target Support Files/Pods-MTORefresherDemo</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7DB346D0F39D3F0E887471402A8071AB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BA6428E9F66FD5A23C0A2E06ED26CD2F</string>
+				<string>961860067A8EF09F2ED1B12A2C56A506</string>
+				<string>433CD3331B6C3787F473C941B61FC68F</string>
+				<string>D37207A75D686B0F4925EE20A23B24A1</string>
+				<string>9DADC8B9D3CE0DB28290BD1FA2003A3C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>80AFF21A03C836D3D08B7A632FED1186</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Pods-MTORefresherDemo-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8E57FB5D32A1DC7348BE6143B7F131DD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C3B7BDF5CE5CB8F095FE12DA55D9A9BB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>90191C8FA2C6C96CE15C8035C94A1919</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3A93F6B21DF0755EEB2729214A274182</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>918F3CFABB2CBC030AEE4690A25BA423</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>1254E757EC795308E432EF1DC3B16BFF</string>
+			<key>buildPhases</key>
+			<array>
+				<string>115D9C03A5D4774B8AC82AE6C76B7AD0</string>
+				<string>27FE9A22B6B0A792978EA2147EA16B3B</string>
+				<string>C5DBBEA132C9478D1F58E345867F3E8A</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>0CFF340C8D4938695AE867C9F4837A50</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-MTORefresherDemo</string>
+			<key>productName</key>
+			<string>Pods-MTORefresherDemo</string>
+			<key>productReference</key>
+			<string>3671DA7187D041B0012BB6C72D66D514</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>929CEF870DEA0EBB5E8F39D65F442BCA</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1AABA21E234C4223B9D262CEC53F4B27</string>
+				<string>F78DFA711D3B5DDF01D1DE8C4BC969F1</string>
+				<string>CA1499D3F8E6A96738FC43DAB9EB7971</string>
+				<string>A97C446C0F332D9316636D91FD06AD04</string>
+				<string>FB75E97EDE40C1515CF7BD341C143865</string>
+				<string>32DDF5F2DD2CDD6A5C75A1DC43D31CAC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/MTORefresher</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>94BC3DB1AA15380F3CE239CADD876E43</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-MTORefresherDemo-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>961860067A8EF09F2ED1B12A2C56A506</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>0C06C3146A59D02F8CC85266EB15E55A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Development Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9A2E7E52E3B76B88DA9BCF2BF50DE85A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>32DDF5F2DD2CDD6A5C75A1DC43D31CAC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>9DADC8B9D3CE0DB28290BD1FA2003A3C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>79B6BFCF00569ACC7113430C779AA764</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Targets Support Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A2DD85A971626CC824C8CB987546E7CA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DE8033DF7A5FCCE345D6E315D472CCE3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A70CDAD61F90AC503C7D04CC22DA2923</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>SYMROOT</key>
+				<string>${SRCROOT}/../build</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>A97C446C0F332D9316636D91FD06AD04</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MTORefresher-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B1931CB8E9B8A93BAD17ED6F39EE644B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6E7E5AF37923BFA48D6994B9BFC6535F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BA6428E9F66FD5A23C0A2E06ED26CD2F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>name</key>
+			<string>Podfile</string>
+			<key>path</key>
+			<string>../Podfile</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+			<key>xcLanguageSpecificationIdentifier</key>
+			<string>xcode.lang.ruby</string>
+		</dict>
+		<key>BB66D86FA631A641182E29AC453D7DE2</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>MTORefresher.framework</string>
+			<key>path</key>
+			<string>MTORefresher.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>BD557258BEF44BDEF3BAB504C3A597F8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-MTORefresherDemo-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BD56C0BD434DA1C61D4DD8A58953E8E2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3C1843BECC17A3DB47B8E890DA5FE4A1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C3B7BDF5CE5CB8F095FE12DA55D9A9BB</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>UIKit.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>C5DBBEA132C9478D1F58E345867F3E8A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>EDF45BB506FBE9712CDEE11DFD4B4162</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>C9984EDED08267128794946CF000BC3E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>DE8033DF7A5FCCE345D6E315D472CCE3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Source</string>
+			<key>path</key>
+			<string>Source</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CA1499D3F8E6A96738FC43DAB9EB7971</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>MTORefresher.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CAB772DD8436C0B666B64AA81A9A85B9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods-MTORefresherDemo.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D37207A75D686B0F4925EE20A23B24A1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BB66D86FA631A641182E29AC453D7DE2</string>
+				<string>3671DA7187D041B0012BB6C72D66D514</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D41D8CD98F00B204E9800998ECF8427E</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastSwiftUpdateCheck</key>
+				<string>0700</string>
+				<key>LastUpgradeCheck</key>
+				<string>0700</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>2D8E8EC45A3A1A1D94AE762CB5028504</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>7DB346D0F39D3F0E887471402A8071AB</string>
+			<key>productRefGroup</key>
+			<string>D37207A75D686B0F4925EE20A23B24A1</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>FD8545CB6CAA4BD067E4AE96C6945DAF</string>
+				<string>918F3CFABB2CBC030AEE4690A25BA423</string>
+			</array>
+		</dict>
+		<key>D6D12EF8CB58460BA3B0DAA31F6FCF3D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>94BC3DB1AA15380F3CE239CADD876E43</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D9EE9AE56B62A317C00BBFFBC305D78F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-MTORefresherDemo.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DE8033DF7A5FCCE345D6E315D472CCE3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>MTORefresher.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DE96316C0DDC0F056B151CFC89B5E6A5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-MTORefresherDemo-frameworks.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E0A6BB9DEDF60EBD3ED063E4831FFCA1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-MTORefresherDemo-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EB01C4EA5C42BFB335FBF0A02E704A47</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-MTORefresherDemo-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EB278D2BEE1E8B9C717A2476DCD140A1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6E7E5AF37923BFA48D6994B9BFC6535F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>EDF45BB506FBE9712CDEE11DFD4B4162</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E0A6BB9DEDF60EBD3ED063E4831FFCA1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>F17BDF08295FC66286471837C2FF50FA</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>CA1499D3F8E6A96738FC43DAB9EB7971</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/MTORefresher/MTORefresher-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/MTORefresher/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/MTORefresher/MTORefresher.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>PRODUCT_NAME</key>
+				<string>MTORefresher</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>F78DFA711D3B5DDF01D1DE8C4BC969F1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>MTORefresher.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FB45FFD90572718D82AB9092B750F0CA</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>RELEASE=1</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>SYMROOT</key>
+				<string>${SRCROOT}/../build</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>FB75E97EDE40C1515CF7BD341C143865</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MTORefresher-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD8545CB6CAA4BD067E4AE96C6945DAF</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>7296C826D5BD4F4535E516323E9B0FD5</string>
+			<key>buildPhases</key>
+			<array>
+				<string>17825EC4C90F5138D2F600E8DE933C61</string>
+				<string>39CAEB91AE178C17E871206C928E614D</string>
+				<string>73728A0F0AE7615F16BF4784261A91FA</string>
+				<string>49D8BA089B291A8ABDB8A2C2030C1E76</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>MTORefresher</string>
+			<key>productName</key>
+			<string>MTORefresher</string>
+			<key>productReference</key>
+			<string>BB66D86FA631A641182E29AC453D7DE2</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>D41D8CD98F00B204E9800998ECF8427E</string>
+</dict>
+</plist>

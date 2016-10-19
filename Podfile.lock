@@ -1,9 +1,9 @@
 PODS:
-  - MTORefresher (0.1.0):
-    - MTORefresher/Core (= 0.1.0)
-  - MTORefresher/BasicComponent (0.1.0):
+  - MTORefresher (1.0.0):
+    - MTORefresher/Core (= 1.0.0)
+  - MTORefresher/BasicComponent (1.0.0):
     - MTORefresher/Core
-  - MTORefresher/Core (0.1.0)
+  - MTORefresher/Core (1.0.0)
 
 DEPENDENCIES:
   - MTORefresher (from `.`)
@@ -14,6 +14,6 @@ EXTERNAL SOURCES:
     :path: "."
 
 SPEC CHECKSUMS:
-  MTORefresher: 58a506b07bf0b1627a4e2e73c754c340a6740e3b
+  MTORefresher: c1bea38c2b2020f9a92eea7109df22ccd262fbcc
 
 COCOAPODS: 0.39.0

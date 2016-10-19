@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'FEE56630ABBBE45086D34127'
+               BlueprintIdentifier = '7045BA81C2ACA38261EE8EA7'
                BlueprintName = 'MTORefresher'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'MTORefresher.framework'>
