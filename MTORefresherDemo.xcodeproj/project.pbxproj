@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35A0EF4564C2BD19A4582B88 /* Pods_MTORefresherDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2FEDACDC4844C3F4D01F931 /* Pods_MTORefresherDemo.framework */; };
 		96586AC81D267ABC0092515B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96586AC71D267ABC0092515B /* AppDelegate.swift */; };
 		96586ACA1D267ABC0092515B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96586AC91D267ABC0092515B /* ViewController.swift */; };
 		96586ACD1D267ABC0092515B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96586ACB1D267ABC0092515B /* Main.storyboard */; };
 		96586ACF1D267ABC0092515B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96586ACE1D267ABC0092515B /* Assets.xcassets */; };
 		96586AD21D267ABC0092515B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96586AD01D267ABC0092515B /* LaunchScreen.storyboard */; };
-		980FC496D7F67A358CE44EC9 /* Pods_MTORefresherDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 019C020011027DBA071AC6C3 /* Pods_MTORefresherDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		019C020011027DBA071AC6C3 /* Pods_MTORefresherDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MTORefresherDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DBBF1C62D7DE7295EC2D5FB /* Pods-MTORefresherDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTORefresherDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MTORefresherDemo/Pods-MTORefresherDemo.release.xcconfig"; sourceTree = "<group>"; };
+		855F6CCD49827EA11589CEA9 /* Pods-MTORefresherDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTORefresherDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MTORefresherDemo/Pods-MTORefresherDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		96586AC41D267ABC0092515B /* MTORefresherDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTORefresherDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96586AC71D267ABC0092515B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96586AC91D267ABC0092515B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,8 +25,7 @@
 		96586ACE1D267ABC0092515B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96586AD11D267ABC0092515B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96586AD31D267ABC0092515B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E2C7ACE39CCF53AB3D0E055A /* Pods-MTORefresherDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTORefresherDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MTORefresherDemo/Pods-MTORefresherDemo.release.xcconfig"; sourceTree = "<group>"; };
-		EE4C3589E78CB34E926E349D /* Pods-MTORefresherDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTORefresherDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MTORefresherDemo/Pods-MTORefresherDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		C2FEDACDC4844C3F4D01F931 /* Pods_MTORefresherDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MTORefresherDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,20 +33,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				980FC496D7F67A358CE44EC9 /* Pods_MTORefresherDemo.framework in Frameworks */,
+				35A0EF4564C2BD19A4582B88 /* Pods_MTORefresherDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		61C5AA6F03355700E2C7C08F /* Pods */ = {
+		5869B9554B9DD57EF7A73124 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EE4C3589E78CB34E926E349D /* Pods-MTORefresherDemo.debug.xcconfig */,
-				E2C7ACE39CCF53AB3D0E055A /* Pods-MTORefresherDemo.release.xcconfig */,
+				C2FEDACDC4844C3F4D01F931 /* Pods_MTORefresherDemo.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		96586ABB1D267ABC0092515B = {
@@ -54,8 +53,8 @@
 			children = (
 				96586AC61D267ABC0092515B /* MTORefresherDemo */,
 				96586AC51D267ABC0092515B /* Products */,
-				61C5AA6F03355700E2C7C08F /* Pods */,
-				C711BF253FB0ED5426DF6DF8 /* Frameworks */,
+				AC8E0139C531C88A532E167A /* Pods */,
+				5869B9554B9DD57EF7A73124 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,12 +79,13 @@
 			path = MTORefresherDemo;
 			sourceTree = "<group>";
 		};
-		C711BF253FB0ED5426DF6DF8 /* Frameworks */ = {
+		AC8E0139C531C88A532E167A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				019C020011027DBA071AC6C3 /* Pods_MTORefresherDemo.framework */,
+				855F6CCD49827EA11589CEA9 /* Pods-MTORefresherDemo.debug.xcconfig */,
+				3DBBF1C62D7DE7295EC2D5FB /* Pods-MTORefresherDemo.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,12 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96586AD61D267ABC0092515B /* Build configuration list for PBXNativeTarget "MTORefresherDemo" */;
 			buildPhases = (
-				1C8DD58953F2CBEB22399F84 /* Check Pods Manifest.lock */,
+				6A9D09E883E1FE38E5AD7351 /* [CP] Check Pods Manifest.lock */,
 				96586AC01D267ABC0092515B /* Sources */,
 				96586AC11D267ABC0092515B /* Frameworks */,
 				96586AC21D267ABC0092515B /* Resources */,
-				5141729A9034DC209238F5DD /* Embed Pods Frameworks */,
-				806E80082DB90469ECEB5F94 /* Copy Pods Resources */,
+				A9E30851A9FA8D1235184D26 /* [CP] Embed Pods Frameworks */,
+				385F9933C543849C13C3FCB9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,49 +159,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1C8DD58953F2CBEB22399F84 /* Check Pods Manifest.lock */ = {
+		385F9933C543849C13C3FCB9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		5141729A9034DC209238F5DD /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MTORefresherDemo/Pods-MTORefresherDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		806E80082DB90469ECEB5F94 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MTORefresherDemo/Pods-MTORefresherDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A9D09E883E1FE38E5AD7351 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A9E30851A9FA8D1235184D26 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MTORefresherDemo/Pods-MTORefresherDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -325,11 +325,12 @@
 		};
 		96586AD71D267ABC0092515B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE4C3589E78CB34E926E349D /* Pods-MTORefresherDemo.debug.xcconfig */;
+			baseConfigurationReference = 855F6CCD49827EA11589CEA9 /* Pods-MTORefresherDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MTORefresherDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mtoteam.MTORefresherDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -338,11 +339,12 @@
 		};
 		96586AD81D267ABC0092515B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E2C7ACE39CCF53AB3D0E055A /* Pods-MTORefresherDemo.release.xcconfig */;
+			baseConfigurationReference = 3DBBF1C62D7DE7295EC2D5FB /* Pods-MTORefresherDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MTORefresherDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mtoteam.MTORefresherDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
