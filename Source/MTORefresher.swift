@@ -37,13 +37,12 @@ open class MTORefresher: UIView {
     
     // MARK: - Life
     
-    fileprivate weak var scrollView: UIScrollView!
-    fileprivate weak var panGestrure: UIPanGestureRecognizer!
+    fileprivate var scrollView: UIScrollView! {
+        return self.superview as! UIScrollView
+    }
+    fileprivate var panGesture: UIPanGestureRecognizer?
     
     public init(scrollView: UIScrollView) {
-        self.scrollView = scrollView
-        self.panGestrure = scrollView.panGestureRecognizer
-        
         super.init(frame: CGRect.zero)
         
         scrollView.addSubview(self)
@@ -57,8 +56,6 @@ open class MTORefresher: UIView {
     open override func willMove(toSuperview newSuperview: UIView?) {
         if newSuperview == nil {
             removeObservers()
-            scrollView = nil
-            panGestrure = nil
         }
         super.willMove(toSuperview: newSuperview)
     }
@@ -193,7 +190,7 @@ open class MTORefresher: UIView {
             }
             insets.top = top
             self.scrollView.contentInset = insets
-        }) 
+        })
     }
     
     fileprivate func stopPullDown() {
@@ -359,7 +356,7 @@ open class MTORefresher: UIView {
                     }
                 }
             case panGestureKeyPath:
-                if panGestrure != nil && panGestrure.state == .ended {
+                if panGesture?.state == .ended {
                     scrollViewContentOffsetChanged(false)
                 }
             default:
@@ -369,20 +366,22 @@ open class MTORefresher: UIView {
     }
     
     fileprivate func addObservers() {
-        if let scrollView = scrollView,  let panGestrure = panGestrure{
+        if scrollView != nil {
             scrollView.addObserver(self, forKeyPath: contentOffsetKeyPath, options:.new, context: &observerContext)
             scrollView.addObserver(self, forKeyPath: contentSizeKeyPath, options: .new, context: &observerContext)
             scrollView.addObserver(self, forKeyPath: contentInsetKeyPath, options: .new, context: &observerContext)
-            panGestrure.addObserver(self, forKeyPath: panGestureKeyPath, options: .new, context: &observerContext)
+            panGesture = scrollView.panGestureRecognizer
+            panGesture?.addObserver(self, forKeyPath: panGestureKeyPath, options: .new, context: &observerContext)
         }
     }
     
     fileprivate func removeObservers() {
-        if let scrollView = scrollView, let panGestrure = panGestrure {
-            removeObserver(scrollView, forKeyPath: contentOffsetKeyPath, context: &observerContext)
-            removeObserver(scrollView, forKeyPath: contentSizeKeyPath, context: &observerContext)
-            removeObserver(scrollView, forKeyPath: contentInsetKeyPath, context: &observerContext)
-            removeObserver(panGestrure, forKeyPath: panGestureKeyPath, context: &observerContext)
+        if scrollView != nil {
+            scrollView.removeObserver(self, forKeyPath: contentOffsetKeyPath, context: &observerContext)
+            scrollView.removeObserver(self, forKeyPath: contentSizeKeyPath, context: &observerContext)
+            scrollView.removeObserver(self, forKeyPath: contentInsetKeyPath, context: &observerContext)
+            panGesture?.removeObserver(self, forKeyPath: panGestureKeyPath, context: &observerContext)
+            panGesture = nil
         }
     }
     
