@@ -3,11 +3,11 @@ MTORefresher is a Swift implementation of pull-to-refresh, include pull-down and
 
 ## Install
 
-Now Support Swift 3:
+Now Support Swift 4:
 ``` 
-pod 'MTORefresher', '~> 1.0.0'
+pod 'MTORefresher', '~> 1.1.0'
 # Optional
-pod 'MTORefresher/BasicComponent', '~> 1.0.0'
+pod 'MTORefresher/BasicComponent', '~> 1.1.0'
 ```
 
 For Swift 2.x:
@@ -20,6 +20,8 @@ pod 'MTORefresher/BasicComponent', '~> 0.1.1'
 ## Basic
 ### Setup
 ```Swift
+private var refresher: MTORefresher!
+
 // pull down
 let topView: SimpleTopComponent = SimpleTopComponent()
 // pull up
@@ -39,9 +41,9 @@ refresher?.canPullUp = false
 ### Trigger
 ```Swift
 // trigger pull down
-refresher?.triggerLoad(type: .PullDown)
+refresher?.triggerLoad(type: .pullDown)
 // trigger pull up
-refresher?.triggerLoad(type: .PullUp)
+refresher?.triggerLoad(type: .pullUp)
 ```
 
 ### Load Data

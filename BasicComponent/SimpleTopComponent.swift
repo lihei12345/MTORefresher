@@ -91,7 +91,7 @@ open class SimpleTopComponent: UIView, Component {
         case .hitTheEnd:
             statusLabel.text = "松开即可刷新..."
             UIView.animate(withDuration: flipAnimationDuration, animations: {
-                self.arrowImageView.layer.transform = CATransform3DMakeRotation((CGFloat(M_PI)/180)*180, 0, 0, 1)
+                self.arrowImageView.layer.transform = CATransform3DMakeRotation((CGFloat(Double.pi)/180)*180, 0, 0, 1)
             }) 
         case .idle:
             pullAction(0)

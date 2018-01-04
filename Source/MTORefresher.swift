@@ -127,10 +127,10 @@ open class MTORefresher: UIView {
         }
     }
     fileprivate var topView: Component!
-    fileprivate var topAction: ((Void) -> Void)?
+    fileprivate var topAction: (() -> Void)?
     fileprivate var originalTopInset: CGFloat = 0
     
-    open func add<Top: Component>(topView: Top, action: @escaping (Void) -> Void) -> MTORefresher where Top: UIView {
+    open func add<Top: Component>(topView: Top, action: @escaping () -> Void) -> MTORefresher where Top: UIView {
         self.topView = topView
         self.topAction = action
         originalTopInset = scrollView.contentInset.top
@@ -229,10 +229,10 @@ open class MTORefresher: UIView {
     }
     
     fileprivate var bottomView: Component!
-    fileprivate var bottomAction: ((Void) -> Void)?
+    fileprivate var bottomAction: (() -> Void)?
     fileprivate var originalBottomInset: CGFloat = 0
     
-    open func add<Bottom: Component>(bottomView: Bottom, enableTap: Bool, action: @escaping (Void) -> Void) -> MTORefresher where Bottom: UIView {
+    open func add<Bottom: Component>(bottomView: Bottom, enableTap: Bool, action: @escaping () -> Void) -> MTORefresher where Bottom: UIView {
         self.bottomView = bottomView
         self.bottomAction = action
         originalBottomInset = scrollView.contentInset.bottom
@@ -322,7 +322,7 @@ open class MTORefresher: UIView {
         bottomView.mto_state = .idle
     }
     
-    func didTapBottomComponent() {
+    @objc func didTapBottomComponent() {
         triggerLoad(type: .pullUp, autoScroll: false)
     }
     
@@ -343,7 +343,7 @@ open class MTORefresher: UIView {
                 contentSizeChanged()
             case contentInsetKeyPath:
                 // Fix iOS 7 inset problem
-                var value = change?[NSKeyValueChangeKey.newKey] as? NSValue
+                let value = change?[NSKeyValueChangeKey.newKey] as? NSValue
                 if let newContentInset = value?.uiEdgeInsetsValue {
                     if loadType == .pullDown {
                         if newContentInset.top != topView.mto_contentHeight() {
